@@ -26,17 +26,15 @@ class App {
     }
 
     public static String toString(Map<String, Integer> words) {
-        String result = "";
         if (words.isEmpty()) {
             return "{}";
         }
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("{\n");
+        StringBuilder result = new StringBuilder("{\n");
         for (Map.Entry<String, Integer> n : words.entrySet()) {
-            stringBuilder.append("  " + n.getKey() + ": " + n.getValue() + "\n");
+            result.append("  " + n.getKey() + ": " + n.getValue() + "\n");
         }
-        stringBuilder.append("}");
-        return stringBuilder.toString();
+        result.append("}");
+        return result.toString();
     }
 }
 //END
