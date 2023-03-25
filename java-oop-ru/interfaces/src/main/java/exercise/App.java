@@ -1,0 +1,14 @@
+package exercise;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+// BEGIN
+public static List buildApartmentsList(List<Home> apartments, int n) {
+    List sortedAps = apartments.stream()
+        .sorted(x -> x.getArea())
+        .limit(n)
+        .collect(Collectors.toList());
+    return sortedApps;
+}
+// END
