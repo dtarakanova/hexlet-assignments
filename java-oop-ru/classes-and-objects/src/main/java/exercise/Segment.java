@@ -18,12 +18,6 @@ public class Segment {
         return point2;
     }
 
-
-    Segment segment = new Segment(point1, point2);
-    Point midPoint = segment.getMidPoint();
-  midPoint.getX(); // 5
-  midPoint.getY();
-
     public Point getMidPoint() {
         Point midPointX = (point1.getX() + point2.getX()) / 2;
         Point midPointY = (point1.getY() + point2.getY()) / 2;
