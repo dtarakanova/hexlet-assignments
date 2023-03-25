@@ -6,9 +6,10 @@ import java.util.stream.Collectors;
 // BEGIN
 public class App {
     public static List<String> buildApartmentsList(List<Home> apartments, int n) {
-        List sortedApps = apartments.stream()
-                .sorted(Home::toCompare)
+        List<String> sortedApps = apartments.stream()
+                .sorted((another1, another2) -> another1.compareTo(another2))
                 .limit(n)
+                .map(x -> x.toString())
                 .collect(Collectors.toList());
         return sortedApps;
     }
