@@ -21,7 +21,7 @@ public class Segment {
     public Point getMidPoint() {
         Point midPointX = (x.point1 + x.point2) / 2;
         Point midPointY = (y.point1 + y.point2) / 2;
-        var midPoint = new Point(midPointX, midPointY)
+        var midPoint = new Point(midPointX, midPointY);
         return midPoint;
     }
 }
