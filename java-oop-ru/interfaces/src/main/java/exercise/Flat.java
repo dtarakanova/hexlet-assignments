@@ -28,7 +28,7 @@ public class Flat implements Home {
     }
 
     public String toString() {
-        String message = "Квартира площадью " + getArea() + "метров на " + floor + "этаже";
+        String message = "Квартира площадью " + getArea() + " метров на " + floor + "этаже";
         return message;
     }
 }
