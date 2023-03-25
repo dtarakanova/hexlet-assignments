@@ -13,5 +13,4 @@ public class App {
         return sortedApps;
     }
 }
-
 // END
