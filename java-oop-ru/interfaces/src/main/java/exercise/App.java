@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 // BEGIN
 public static List buildApartmentsList(List<Home> apartments, int n) {
-    List sortedAps = apartments.stream()
+    List sortedApps = apartments.stream()
         .sorted(x -> x.getArea())
         .limit(n)
         .collect(Collectors.toList());
