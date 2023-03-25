@@ -5,19 +5,19 @@ public class Cottage implements Home {
     double area;
     int floorCount;
 
-    public Cottage (double area, int floorCount) {
+    public Cottage(double area, int floorCount) {
         this.area = area;
         this.floorCount = floorCount;
     }
 
-    public double getArea () {
+    public double getArea() {
         return area;
     }
 
-    public int compareTo(Home Flat) {
-        if (getArea() == Flat.getArea()) {
+    public int compareTo(Home another) {
+        if (getArea() == another.getArea()) {
             return 0;
-        } else if (getArea() > Flat.getArea()) {
+        } else if (getArea() > another.getArea()) {
             return 1;
         } else {
             return -1;
