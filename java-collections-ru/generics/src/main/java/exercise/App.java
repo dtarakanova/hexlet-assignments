@@ -8,6 +8,14 @@ import java.util.Map.Entry;
 // BEGIN
 class App {
     public static List<Map<String, String>> findWhere(List<Map<String, String>> books, Map<String, String> where) {
+        for (var i = 0; i < allChars.length; i++) {
+            if (allChars[i].equals('a') || allChars[i].equals('o') || allChars[i].equals('i') || allChars[i].equals('e') || allChars[i].equals('u')) {
+                i++;
+            } else {
+                result.append(allChars[i]);
+            }
+        }
+
         List<Map<String, String>> result = new ArrayList<>();
         for (Map<String, String> book : books) {
             boolean isOk = true;

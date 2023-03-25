@@ -8,12 +8,12 @@ import java.util.stream.Collectors;
 
 // BEGIN
 class Sorter {
-    public static List<String> takeOldestMans (List<Map<String,String>> users ) {
-        return users.stream()
-                .filter(i -> i.get("gender").equals("male"))
-                .sorted(Comparator.comparing(j -> j.get("birthday")))
-                .map(user -> user.get("name"))
-                .collect(Collectors.toList());
-    }
+public static List<String> takeOldestMans(List<Map<String,String>> users) {
+    return users.stream()
+            .filter(gend -> gend.get("gender").equals("male"))
+            .sorted(Comparator.comparing(x -> x.get("birthday"))
+            .map(user -> user.get("name"))
+                    .collect(Collectors.toList())
+}
 }
 // END

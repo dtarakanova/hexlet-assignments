@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+checkstyle {
+    toolVersion '8.41'
+}
+
+task checkExercises (type: Checkstyle) {
+    file('.').eachDir { course ->
+        def exercise = project.hasProperty('exercise') ? project.exercise : ''
+        source course.name + '/' + exercise
+        include '**/*.java'
+        exclude '**/build/**'
+        classpath = files()
+    }
+}
