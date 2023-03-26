@@ -3,6 +3,7 @@ package exercise;
 import java.util.Map;
 import java.util.HashMap;
 
+
 // BEGIN
 public class InMemoryKV {
     Map<String, String> baseData;
@@ -25,7 +26,7 @@ public class InMemoryKV {
     }
 
     public Map<String, String> toMap() {
-        return baseData.stream().collect(Collectors.toMap());
+        return baseData;
     }
 }
 // END
