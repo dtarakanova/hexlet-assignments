@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 
 // BEGIN
-public class InMemoryKV {
+public class InMemoryKV implements KeyValueStorage {
     Map<String, String> baseData;
 
     public InMemoryKV (Map<String, String> baseData){
