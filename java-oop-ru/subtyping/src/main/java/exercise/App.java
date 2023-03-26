@@ -3,13 +3,12 @@ package exercise;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.HashMap;
 
 // BEGIN
 public class App {
-    public static Map<String, String> swapKeyValue(Map<String, String> baseData) {
+    public static void swapKeyValue(KeyValueStorage storage) {
         Map<String, String> swapped = new HashMap<String, String>();
-        for(Map.Entry<String, String> entry : baseData.entrySet()) {
+        for(Map.Entry<String, String> entry : storage.entrySet()) {
             swapped.put(entry.getValue(), entry.getKey());
         }
         return swapped;
