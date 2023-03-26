@@ -11,7 +11,6 @@ public class App {
         for(Map.Entry<String, String> entry : swapped.entrySet()) {
             swapped.set(entry.getValue(), entry.getKey());
         }
-        return swapped;
     }
 }
 // END
