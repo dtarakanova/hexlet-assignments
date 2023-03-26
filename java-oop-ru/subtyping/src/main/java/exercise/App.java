@@ -13,7 +13,7 @@ public class App {
                     var v = x.getValue();
                     storage.unset(k);
                     storage.set(v, k);
-                }
+                })
     }
 }
 // END
