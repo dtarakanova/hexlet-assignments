@@ -6,9 +6,9 @@ import java.util.HashMap;
 
 // BEGIN
 public class InMemoryKV implements KeyValueStorage {
-   private Map<String, String> storage = new HashMap<>();
+    private Map<String, String> storage = new HashMap<>();
 
-    public InMemoryKV (Map<String, String> storage){
+    public InMemoryKV(Map<String, String> storage) {
        this.storage = storage;
     }
 
@@ -16,7 +16,7 @@ public class InMemoryKV implements KeyValueStorage {
         storage.put(key, value);
     }
 
-    public void unset (String key) {
+    public void unset(String key) {
         storage.remove(key);
     }
 
