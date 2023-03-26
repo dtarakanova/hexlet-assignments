@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 // BEGIN
 public class InMemoryKV {
-    Map<String key, String value> baseData;
+    Map<String, String> baseData;
 
     public InMemoryKV {
         this.baseData = baseData;
