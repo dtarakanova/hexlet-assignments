@@ -7,9 +7,9 @@ import java.util.Set;
 // BEGIN
 public class App {
     public static void swapKeyValue(KeyValueStorage storage) {
-        Map<String, String> swapped = new HashMap<String, String>();
+        Map<String, String> swapped = storage.toMap();
         for(Map.Entry<String, String> entry : storage.entrySet()) {
-            swapped.put(entry.getValue(), entry.getKey());
+            storage.set(entry.getValue(), entry.getKey());
         }
         return swapped;
     }
