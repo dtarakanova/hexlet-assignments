@@ -8,8 +8,8 @@ import java.util.Set;
 public class App {
     public static void swapKeyValue(KeyValueStorage storage) {
         Map<String, String> swapped = storage.toMap();
-        for(Map.Entry<String, String> entry : storage.entrySet()) {
-            storage.set(entry.getValue(), entry.getKey());
+        for(Map.Entry<String, String> entry : swapped.entrySet()) {
+            swapped.set(entry.getValue(), entry.getKey());
         }
         return swapped;
     }
