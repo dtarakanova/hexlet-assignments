@@ -4,10 +4,6 @@ package exercise.connections;
 public class Connected implements Connection{
     private TcpConnection connection;
 
-    public Connected(TcpConnection connection) {
-        this.connection = connection;
-    }
-
     public String getCurrentState() {
         return "connected";
     }

@@ -4,10 +4,6 @@ package exercise.connections;
 public class Disconnected implements Connection{
     private TcpConnection connection;
 
-    public Disсonnected(TcpConnection connection) {
-        this.connection = connection;
-    }
-
     public String getCurrentState() {
         return "disconnected";
     }
