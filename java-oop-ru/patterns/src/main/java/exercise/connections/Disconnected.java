@@ -4,7 +4,7 @@ package exercise.connections;
 public class Disconnected implements Connection{
     private TcpConnection connection;
 
-    public Disonnected(TcpConnection connection) {
+    public Disсonnected(TcpConnection connection) {
         this.connection = connection;
     }
 
