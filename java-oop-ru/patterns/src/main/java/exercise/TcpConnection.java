@@ -26,11 +26,10 @@ public class TcpConnection {
         this.connection = connection;
     }
 
-    public String write (String data) {
+    public void write (String data) {
         Stringbuilder sb = new Stringbuilder("");
         sb.append(data);
         String result = sb.toString();
-        return result;
     }
 }
 // END
