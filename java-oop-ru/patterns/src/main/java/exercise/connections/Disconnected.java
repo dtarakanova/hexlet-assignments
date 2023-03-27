@@ -18,7 +18,7 @@ public class Disconnected implements Connection{
     }
 
     public void write (String data) {
-        System.out.println("Error. Establish connection first.");
+        System.out.println("Error. You need to establish connection first.");
     }
 }
 // END
