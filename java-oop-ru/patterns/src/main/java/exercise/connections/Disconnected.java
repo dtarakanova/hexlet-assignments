@@ -2,6 +2,7 @@ package exercise.connections;
 
 // BEGIN
 public class Disconnected implements Connection{
+    private Connection connect;
 
     public String getCurrentState() {
         return "disconnected";

@@ -4,12 +4,18 @@ import java.util.ArrayList;
 
 // BEGIN
 public class TcpConnection {
+    private Connection connection;
     private String ip;
     private int port;
 
     public TcpConnection (String ip, int port){
+        this.connection = new Disconnected(this);
         this.ip = ip;
         this.port = port;
+    }
+
+    public void SetConnection (Connection connection) {
+        this.connection = connection;
     }
 
     public String getCurrentState() {
@@ -17,11 +23,11 @@ public class TcpConnection {
     }
 
     public void connect() {
-        this.connection = connection;
+        connection.connect();
     }
 
     public void disconnect() {
-        this.connection = connection;
+        connection.disconnect();
     }
 
     public void write (String data) {

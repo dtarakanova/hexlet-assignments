@@ -2,6 +2,7 @@ package exercise.connections;
 
 // BEGIN
 public class Connected implements Connection{
+    private Connection connect;
 
     public String getCurrentState() {
         return "connected";
@@ -13,7 +14,7 @@ public class Connected implements Connection{
 
     public void disconnect() {
         System.out.println("Will disconnect now");
-        this.connection.connect(new Disonnected(this.connection));
+        this.connection.connect(new Disonnected(connection));
     }
 
     public void write (String data) {
