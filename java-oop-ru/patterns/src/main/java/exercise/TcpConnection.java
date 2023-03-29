@@ -1,5 +1,8 @@
 package exercise;
 
+import exercise.connections.Connection;
+import exercise.connections.Disconnected;
+
 // BEGIN
 public class TcpConnection {
     private String ip;
