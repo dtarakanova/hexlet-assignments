@@ -1,7 +1,7 @@
 package exercise.connections;
 
 // BEGIN
-public class Disconnected implements Connectionm {
+public class Disconnected implements Connection {
     public Disconnected(TcpConnection connection) {
         this.connection = connection;
     }
