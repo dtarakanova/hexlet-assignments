@@ -2,25 +2,32 @@ package exercise.connections;
 
 // BEGIN
 public class Connected implements Connection{
-    private Connection connect;
+    private TcpConnection connection;
 
+    public Connected(TcpConnection connection) {
+        this.connection = connection;
+    }
+
+    @Override
     public String getCurrentState() {
         return "connected";
     }
 
+    @Override
     public void connect() {
         System.out.println("Error. Try to connect when connection already established.");
     }
 
+    @Override
     public void disconnect() {
-        System.out.println("Will disconnect now");
-        this.connection.connect(new Disonnected(connection));
+        connection.setState(new Disconnected(connection))
+        System.out.println("Disconnected");
+
     }
 
+    @Override
     public void write (String data) {
-        Stringbuilder sb = new Stringbuilder("");
-        sb.append(data);
-        String result = sb.toString();
+        System.out.println("Data written: " + data);
     }
 
 }

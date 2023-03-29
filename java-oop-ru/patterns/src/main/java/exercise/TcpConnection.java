@@ -4,36 +4,34 @@ import java.util.ArrayList;
 
 // BEGIN
 public class TcpConnection {
-    private Connection connection;
     private String ip;
     private int port;
+    private Connection state;
 
     public TcpConnection (String ip, int port){
-        this.connection = new Disconnected(this);
         this.ip = ip;
         this.port = port;
-    }
-
-    public void SetConnection (Connection connection) {
-        this.connection = connection;
+        this.state = new Disconnected(this);
     }
 
     public String getCurrentState() {
-        return connection;
+        return state.getCurrentState();
     }
 
     public void connect() {
-        connection.connect();
+        state.connect();
     }
 
     public void disconnect() {
-        connection.disconnect();
+        state.disconnect();
+    }
+
+    public void setState(Connection connection) {
+        state = connection;
     }
 
     public void write (String data) {
-        Stringbuilder sb = new Stringbuilder("");
-        sb.append(data);
-        String result = sb.toString();
+        state.write(data);
     }
 }
 // END
