@@ -2,7 +2,6 @@ package exercise.connections;
 
 // BEGIN
 public class Connected implements Connection{
-    private TcpConnection connection;
 
     public String getCurrentState() {
         return "connected";

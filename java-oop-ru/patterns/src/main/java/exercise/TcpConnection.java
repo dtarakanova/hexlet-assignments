@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 // BEGIN
 public class TcpConnection {
-    private Connection connection;
     private String ip;
     private int port;
 
-    public TcpConnection (String ip, int port, Connection state){
-        this.state = new Disconnected(this);
+    public TcpConnection (String ip, int port){
         this.ip = ip;
         this.port = port;
     }
