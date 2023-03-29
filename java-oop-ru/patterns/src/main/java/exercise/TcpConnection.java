@@ -1,6 +1,4 @@
 package exercise;
-import java.util.List;
-import java.util.ArrayList;
 
 // BEGIN
 public class TcpConnection {
@@ -8,7 +6,7 @@ public class TcpConnection {
     private int port;
     private Connection state;
 
-    public TcpConnection (String ip, int port){
+    public TcpConnection(String ip, int port) {
         this.ip = ip;
         this.port = port;
         this.state = new Disconnected(this);
@@ -30,7 +28,7 @@ public class TcpConnection {
         state = connection;
     }
 
-    public void write (String data) {
+    public void write(String data) {
         state.write(data);
     }
 }

@@ -1,10 +1,10 @@
 package exercise.connections;
 
 // BEGIN
-public class Disconnected implements Connection{
+public class Disconnected implements Connectionm {
     private TcpConnection connection;
 
-    public Disconnectedonnected(TcpConnection connection) {
+    public Disconnected(TcpConnection connection) {
         this.connection = connection;
     }
 
@@ -15,7 +15,7 @@ public class Disconnected implements Connection{
 
     @Override
     public void connect() {
-        connection.setState(new Connected(connection))
+        connection.setState(new Connected(connection));
         System.out.println("Connected");
     }
 
@@ -25,7 +25,7 @@ public class Disconnected implements Connection{
     }
 
     @Override
-    public void write (String data) {
+    public void write(String data) {
         System.out.println("Error. Establish connection first.");
     }
 }

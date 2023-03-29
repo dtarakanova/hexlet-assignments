@@ -1,7 +1,7 @@
 package exercise.connections;
 
 // BEGIN
-public class Connected implements Connection{
+public class Connected implements Connection {
     private TcpConnection connection;
 
     public Connected(TcpConnection connection) {
@@ -20,13 +20,13 @@ public class Connected implements Connection{
 
     @Override
     public void disconnect() {
-        connection.setState(new Disconnected(connection))
+        connection.setState(new Disconnected(connection));
         System.out.println("Disconnected");
 
     }
 
     @Override
-    public void write (String data) {
+    public void write(String data) {
         System.out.println("Data written: " + data);
     }
 
