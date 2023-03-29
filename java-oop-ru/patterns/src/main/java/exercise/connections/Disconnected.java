@@ -2,11 +2,11 @@ package exercise.connections;
 
 // BEGIN
 public class Disconnected implements Connection {
+    private TcpConnection connection;
+
     public Disconnected(TcpConnection connection) {
         this.connection = connection;
     }
-
-    private TcpConnection connection;
 
     @Override
     public String getCurrentState() {

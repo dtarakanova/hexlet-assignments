@@ -2,12 +2,11 @@ package exercise.connections;
 
 // BEGIN
 public class Connected implements Connection {
+    private TcpConnection connection;
+
     public Connected(TcpConnection connection) {
         this.connection = connection;
     }
-
-    private TcpConnection connection;
-
 
     @Override
     public String getCurrentState() {
