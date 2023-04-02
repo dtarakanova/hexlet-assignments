@@ -30,7 +30,7 @@ public class Tag {
     }
 
     public String toString() {
-        Stringbuilder result = new StringBuilder("<");
+        StringBuilder result = new StringBuilder("<");
         for (var nn : attributes.entrySet()) {
             result.append(nn.getName());
             result.append("=\"");
