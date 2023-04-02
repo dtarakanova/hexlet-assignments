@@ -15,6 +15,7 @@ public class Tag {
     public String basicResult() {
         StringBuilder result = new StringBuilder("<");
         result.append(name);
+        result.append(" ");
         for (var nn : attributes.entrySet()) {
             result.append(nn.getKey());
             result.append("=\"");
