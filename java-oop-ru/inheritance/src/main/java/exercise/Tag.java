@@ -13,28 +13,12 @@ public class Tag {
         this.attributes = attributes;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Map<String, String> getAttributes() {
-        return attributes;
-    }
-
-    public void setAttributes(Map<String, String> attributes) {
-        this.attributes = attributes;
-    }
-
     public String toString() {
         StringBuilder result = new StringBuilder("<");
         for (var nn : attributes.entrySet()) {
-            result.append(nn.getName());
+            result.append(nn.getKey());
             result.append("=\"");
-            result.append(nn.getAttributes);
+            result.append(nn.getValue());
             result.append("\"");
             result.append(" ");
         }

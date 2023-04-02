@@ -18,9 +18,11 @@ public class PairedTag extends Tag {
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new StringBuilder("<");
+        result.append(name);
+
         for (Tag tag : children) {
-            sb.append(tag.toString());
+            result.append(tag.toString());
         }
         String childrenString = sb.toString();
 
