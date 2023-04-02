@@ -5,8 +5,8 @@ import java.util.Map;
 
 // BEGIN
 public class Tag {
-    private String name;
-    private Map<String, String> attributes = new HashMap<>();
+    protected String name;
+    protected Map<String, String> attributes;
 
     public Tag(String name, Map<String, String> attributes) {
         this.name = name;
@@ -31,10 +31,10 @@ public class Tag {
 
     public String toString() {
         Stringbuilder result = new StringBuilder("<");
-        for (nn : attributes) {
-            result.append(name);
+        for (var nn : attributes.entrySet()) {
+            result.append(nn.getName());
             result.append("=\"");
-            result.append(nn);
+            result.append(nn.getAttributes);
             result.append("\"");
             result.append(" ");
         }
