@@ -2,7 +2,6 @@ package exercise;
 
 import java.util.Map;
 import java.util.List;
-import java.util.stream.Collectors;
 
 // BEGIN
 public class PairedTag extends Tag {
@@ -10,7 +9,7 @@ public class PairedTag extends Tag {
     private List<Tag> children;
 
 
-    public PairedTag (String name, Map<String,String> attributes, String body, List<Tag> children){
+    public PairedTag(String name, Map<String, String> attributes, String body, List<Tag> children) {
         super(name, attributes);
         this.body = body;
         this.children = children;
@@ -20,11 +19,11 @@ public class PairedTag extends Tag {
     public String toString() {
         StringBuilder result = new StringBuilder(super.basicResult());
         result.append(body);
-        children.forEach(child -> sb.append(child.toString()));
-        sb.append("</")
+        children.forEach(child -> result.append(child.toString()));
+        result.append("</")
                 .append(name)
                 .append(">");
-        return sb.toString();
+        return result.toString();
     }
 }
 // END
