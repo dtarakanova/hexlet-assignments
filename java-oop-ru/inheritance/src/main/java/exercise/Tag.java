@@ -13,7 +13,7 @@ public class Tag {
         this.attributes = attributes;
     }
 
-    public String toString() {
+    public String basicResult() {
         StringBuilder result = new StringBuilder("<");
         for (var nn : attributes.entrySet()) {
             result.append(nn.getKey());
