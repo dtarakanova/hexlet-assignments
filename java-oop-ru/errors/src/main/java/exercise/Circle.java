@@ -16,7 +16,7 @@ public class Circle {
         return radius;
     }
 
-    public int getSquare(Circle circle) {
+    public static int getSquare(Circle circle) {
         if (getRadius() < 0) {
             throw new NegativeRadiusException();
         } else {
