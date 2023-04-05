@@ -12,7 +12,7 @@ public class Circle {
         this.radius = radius;
     }
 
-    public int getRadius() {
+    public static int getRadius() {
         return radius;
     }
 

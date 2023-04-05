@@ -6,6 +6,7 @@ public class App {
         try {
             double sqDouble = Circle.getSquare(circle);
             int sqquare = (int)sqDouble;
+            return sqquare;
         } catch (NegativeRadiusException e) {
             System.out.println("Не удалось посчитать площадь");
         } finally {
