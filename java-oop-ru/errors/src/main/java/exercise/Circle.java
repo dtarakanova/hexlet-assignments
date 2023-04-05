@@ -12,7 +12,7 @@ public class Circle {
         this.radius = radius;
     }
 
-    public static int getRadius() {
+    public int getRadius() {
         return radius;
     }
 
@@ -20,8 +20,9 @@ public class Circle {
         if (getRadius() < 0) {
             throw new NegativeRadiusException();
         } else {
-                int square = Math.PI * getRadius() * getRadius();
-                return square;
+                double square = Math.PI * getRadius() * getRadius();
+                int finsquare = (int)square;
+                return finsquare;
         }
     }
 }
