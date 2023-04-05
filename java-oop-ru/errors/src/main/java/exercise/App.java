@@ -2,9 +2,9 @@ package exercise;
 
 // BEGIN
 public class App {
-    public static int printSquare(Circle circle) {
+    public static void printSquare(Circle circle) {
         try {
-            return Math.round(Circle.getSquare());
+            System.out.println(Math.round(Circle.getSquare()));
         } catch (NegativeRadiusException e) {
             System.out.println("Не удалось посчитать площадь");
         } finally {
