@@ -16,13 +16,11 @@ public class Circle {
         return radius;
     }
 
-    public static int getSquare(Circle circle) {
+    public static int getSquare() {
         if (getRadius() < 0) {
             throw new NegativeRadiusException();
         } else {
-                double square = Math.PI * getRadius() * getRadius();
-                int finsquare = (int)square;
-                return finsquare;
+            return Math.PI * getRadius() * getRadius();
         }
     }
 }
