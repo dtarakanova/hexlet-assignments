@@ -18,11 +18,10 @@ public class Circle {
 
     public int getSquare(Circle circle) {
         if (getRadius() < 0) {
-            throw new NegativeRadiusException;
-            else{
+            throw new NegativeRadiusException();
+        } else {
                 int square = Math.PI * getRadius() * getRadius();
                 return square;
-            }
         }
     }
 }
