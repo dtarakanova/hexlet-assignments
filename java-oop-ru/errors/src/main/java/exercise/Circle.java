@@ -2,13 +2,11 @@ package exercise;
 
 // BEGIN
 public class Circle {
-    private int pointX;
-    private int pointY;
+    private Point point;
     private int radius;
 
-    public Circle(int pointX, int pointY, int radius) {
-        this.pointX = pointX;
-        this.pointY = pointY;
+    public Circle(Point point, int radius) {
+        this.point = point;
         this.radius = radius;
     }
 
