@@ -12,7 +12,7 @@ public class Validator {
         Field[] fields = address.getClass().getDeclaredFields();
         for (Field field : fields) {
             if (field.getAnnotation(NotNull.class) == null) {
-                allNulls.add(String.valueOf(field));
+                allNulls.add(field.getName());
             }
         }
         return allNulls;
