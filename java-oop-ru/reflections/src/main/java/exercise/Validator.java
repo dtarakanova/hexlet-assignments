@@ -8,10 +8,9 @@ import java.util.ArrayList;
 public class Validator {
     public static List<String> validate(Address address) {
         List<String> allNulls = new ArrayList<>();
-        Field[] fields = address.Address().getDeclaredFields();
+        Field[] fields = address.getClass().getDeclaredFields();
         for (Field field : fields) {
-            RandomNumber randomNumber = field.getAnnotation(Address.class);
-            if (randomNumber == null) {
+            if (field.getAnnotation(Address.class) == null) {
                 allNulls.add(field);
             }
         }
