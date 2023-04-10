@@ -10,7 +10,7 @@ public class Validator {
         List<String> allNulls = new ArrayList<>();
         Field[] fields = address.getClass().getDeclaredFields();
         for (Field field : fields) {
-            if (field.getAnnotation(Address.class) == null) {
+            if (field.getAnnotation(NotNull.class) == null) {
                 allNulls.add(field);
             }
         }
