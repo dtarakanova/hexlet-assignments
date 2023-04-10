@@ -11,7 +11,8 @@ public class Validator {
         Field[] fields = address.getClass().getDeclaredFields();
         for (Field field : fields) {
             if (field.getAnnotation(NotNull.class) == null) {
-                allNulls.add(field);
+                String newField = field.toString();
+                allNulls.add(newField);
             }
         }
         return allNulls;
