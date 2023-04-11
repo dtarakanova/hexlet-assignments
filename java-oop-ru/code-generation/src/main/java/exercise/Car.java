@@ -22,7 +22,7 @@ class Car {
     // BEGIN
     public String serialize() {
         ObjectMapper mapper = new ObjectMapper();
-        String jsonString= "";
+        String jsonToString= "";
         try {
             jsonToString = mapper.writeValueAsString(toString());
         } catch (JsonProcessingException e) {
