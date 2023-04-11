@@ -11,7 +11,7 @@ public class Validator {
         Field[] fields = address.getClass().getDeclaredFields();
         for (Field field : fields) {
             if (field.getName() != "flatNumber") {
-                if (field.getAnnotation(Address.class) == null) {
+                if (field.getAnnotation(NotNull.class) == null) {
                     allNulls.add(field.getName());
                 }
             }
