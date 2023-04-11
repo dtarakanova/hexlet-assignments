@@ -21,10 +21,10 @@ class Car {
 
     // BEGIN
     public String serialize() {
-        ObjectMapper objectmapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
         String jsonString= "";
         try {
-            jsonString = mapper.writeValueAsString(toString());
+            jsonToString = mapper.writeValueAsString(toString());
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
@@ -35,7 +35,7 @@ class Car {
         ObjectMapper mapper = new ObjectMapper();
         Car car;
         try {
-            car = mapper.readValue(jsonString, Car.class);
+            car = mapper.readValue(jsonToString, Car.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
