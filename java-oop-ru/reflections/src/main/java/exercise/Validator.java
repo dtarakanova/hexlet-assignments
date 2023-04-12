@@ -8,17 +8,20 @@ import java.util.Stream;
 // BEGIN
 public class Validator {
     public static List<String> validate(Address address) {
-        List<String> hasAnnotations = new ArrayList<>();
         List<String> allNulls = new ArrayList<>();
         Field[] fields = address.getClass().getDeclaredFields();
-        hasAnnotations = fields.stream()
-                .filter(fields -> fields.isAnnotationPresent(NotNull.class))
-                .collect(Collectors.toList());
-        for (Field nullFields : hasAnnotations) {
-                if (nulls.getAnnotation(NotNull.class) == null) {
+
+        for (Field fields : field) {
+            Notnull notNull = field.getAnnotation(NotNull.class);
+            try {
+                field.setAccessible(true);
+                if (notNull != null && field.get(address) == null) {
                     allNulls.add(field.getName());
                 }
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
             }
+        }
         return allNulls;
     }
 }
