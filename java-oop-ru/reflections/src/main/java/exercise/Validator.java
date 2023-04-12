@@ -9,7 +9,7 @@ public class Validator {
     public static List<String> validate(Address address) {
         List<String> allNulls = new ArrayList<>();
         Field[] fields = address.getClass().getDeclaredFields();
-        for (Field fields : field) {
+        for (Field field : fields) {
             Notnull notNull = field.getAnnotation(NotNull.class);
             try {
                 field.setAccessible(true);
