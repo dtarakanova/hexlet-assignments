@@ -3,6 +3,7 @@ package exercise;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stream;
 
 // BEGIN
 public class Validator {
