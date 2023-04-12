@@ -13,7 +13,7 @@ public class Validator {
         hasAnnotations = stream.of(fields)
                 .filter(field -> field.isAnnotationPresent(NotNull.class))
                 .collect(Collectors.toList());
-        for (Field nullFields : nulls) {
+        for (Field nullFields : hasAnnotations) {
                 if (nulls.getAnnotation(NotNull.class) == null) {
                     allNulls.add(field.getName());
                 }
