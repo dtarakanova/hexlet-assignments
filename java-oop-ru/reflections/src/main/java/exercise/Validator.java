@@ -18,7 +18,6 @@ public class Validator {
                     allNulls.add(field.getName());
                 }
             }
-        }
         return allNulls;
     }
 }
