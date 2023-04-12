@@ -11,8 +11,8 @@ public class Validator {
         List<String> hasAnnotations = new ArrayList<>();
         List<String> allNulls = new ArrayList<>();
         Field[] fields = address.getClass().getDeclaredFields();
-        hasAnnotations = field.stream()
-                .filter(field -> field.isAnnotationPresent(NotNull.class))
+        hasAnnotations = fields.stream()
+                .filter(fields -> fields.isAnnotationPresent(NotNull.class))
                 .collect(Collectors.toList());
         for (Field nullFields : hasAnnotations) {
                 if (nulls.getAnnotation(NotNull.class) == null) {
