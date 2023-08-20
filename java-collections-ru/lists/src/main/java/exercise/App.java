@@ -10,11 +10,11 @@ public class App {
         word = word.toLowerCase();
         String[] arSymbols = word.split("");
         List<String> toCheck = new ArrayList<>(Arrays.asList(arSymbols));
-        String[] all = symbols.split("");
-        List<String> mimi = new ArrayList<>(Arrays.asList(all));
+        String[] allSymbols = symbols.split("");
+        List<String> symbolList = new ArrayList<>(Arrays.asList(allSymbols));
         for (String x : toCheck) {
-            if (mimi.contains(x)) {
-                mimi.remove(x);
+            if (symbolList.contains(x)) {
+                symbolList.remove(x);
             } else {
                 return false;
             }
