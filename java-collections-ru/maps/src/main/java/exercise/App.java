@@ -2,39 +2,39 @@ package exercise;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Arrays;
+
 
 // BEGIN
-class App {
+public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
-        Map<String, Integer> words = new HashMap<>();
+        String[] words = sentence.split(" ");
+        Map<String, Integer> map = new HashMap<>();
         if (sentence.length() == 0) {
-            return words;
+            return map;
         }
-        String[] allWords = sentence.split(" ");
-
-        for (var i = 0; i < allWords.length; i++) {
-            var count = 0;
-            for (var j = 0; j < allWords.length; j++) {
-                if (allWords[i].equals(allWords[j])) {
-                    count = count + 1;
+        for (var i = 0; i < words.length; i++) {
+            int count = 0;
+            for (var j = 0; j < words.length; j++) {
+                if (words[i].equals(words[j])) {
+                    count++;
                 }
             }
-            words.put(allWords[i], count);
+            map.put(words[i], count);
         }
-        return words;
+        return map;
     }
 
-    public static String toString(Map<String, Integer> words) {
-        if (words.isEmpty()) {
+    public static String toString(Map<String, Integer> map) {
+        if (map.isEmpty()) {
             return "{}";
         }
         StringBuilder result = new StringBuilder("{\n");
-        for (Map.Entry<String, Integer> n : words.entrySet()) {
-            result.append("  " + n.getKey() + ": " + n.getValue() + "\n");
+        for (Map.Entry<String,Integer> entry : map.entrySet()) {
+            result.append("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
         result.append("}");
-        return result.toString();
+        String fin = result.toString();
+        return fin;
     }
 }
 //END
