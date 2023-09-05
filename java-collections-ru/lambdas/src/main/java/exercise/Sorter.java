@@ -7,13 +7,12 @@ import java.time.LocalDate;
 import java.util.stream.Collectors;
 
 // BEGIN
-class Sorter {
-public static List<String> takeOldestMans(List<Map<String,String>> users) {
-    return users.stream()
-            .filter(gend -> gend.get("gender").equals("male"))
-            .sorted(Comparator.comparing(x -> x.get("birthday"))
-            .map(user -> user.get("name"))
-                    .collect(Collectors.toList())
-}
+public class Sorter {
+    public static List<Map<String, String>> takeOldestMans(List<Map<String, String>> users) {
+        List<Map<String, String>> sortedList = users.stream()
+                .sorted(Comparator.naturalOrder())
+                .collect(Collectors.toList());
+        return sortedList;
+    }
 }
 // END
