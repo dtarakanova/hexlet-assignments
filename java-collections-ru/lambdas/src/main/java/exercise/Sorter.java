@@ -8,11 +8,16 @@ import java.util.stream.Collectors;
 
 // BEGIN
 public class Sorter {
-    public static List<Map<String, String>> takeOldestMans(List<Map<String, String>> users) {
-        List<Map<String, String>> sortedList = users.stream()
-                .sorted(Comparator.naturalOrder())
+    public static List<String> takeOldestMans(List<Map<String, String>> users) {
+        return users.stream()
+                .filter(user -> user.get("gender") == "male")
+                .sorted((user1, user2) -> {
+                    LocalDate date1 = LocalDate.parse(user1.get("birthday"));
+                    LocalDate date2 = LocalDate.parse(user2.get("birthday"));
+                    return date1.compareTo(date2);
+                })
+                .map(user -> user.get("name"))
                 .collect(Collectors.toList());
-        return sortedList;
     }
 }
 // END
