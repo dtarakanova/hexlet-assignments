@@ -21,15 +21,16 @@ public final class App {
         // BEGIN
         app.get("/companies/{id}", ctx -> {
             var id = ctx.pathParam("id");
-            var results = COMPANIES.stream()
+            Map<String, String> results = COMPANIES.stream()
                     .filter(i -> i.get("id").equals(id))
-                    .toList();
+                    .findFirst()
+                    .orElse(null);
 
-            if (results.isEmpty()) {
+            if (results==null) {
                 throw new NotFoundResponse("Company not found");
             }
 
-            ctx.json(results.get(0));
+            ctx.json(results);
         });
         // END
 
