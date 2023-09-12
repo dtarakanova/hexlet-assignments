@@ -16,10 +16,12 @@ public final class App {
 
         // BEGIN
         app.get("/users", ctx -> {
-            var resultSize = ctx.queryParamAsClass("resultSize", Integer.class).getOrDefault(5);
-            List<Map<String, String>> miniUsers = USERS.subList(0,5);
+            var page = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
+            var per = ctx.queryParamAsClass("per", Integer.class).getOrDefault(5);
+            int range = (page - 1) * per;
+            List<Map<String, String>> miniUsers = USERS.subList(range, range + per);
             ctx.json(miniUsers);
-                });
+        });
         // END
         return app;
 
