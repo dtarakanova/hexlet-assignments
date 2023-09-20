@@ -1,9 +1,13 @@
-<!-- BEGIN -->
-@import org.example.hexlet.dto.UsersPage
+@import exercise.dto.users.UsersPage
+@param UsersPage page
 
 @template.layout.page(
-maincontent = @`
-<a href="/">Main</a>
-<p>Привет!</p>
+content = @`
+    @for(var user : page.getUsers())
+        <div>
+            <h2>${user.getFirstName() + " " + user.getLastName()}</h2>
+            <p>${user.getEmail()}</p>
+        </div>
+    @endfor
+`
 )
-<!-- END -->

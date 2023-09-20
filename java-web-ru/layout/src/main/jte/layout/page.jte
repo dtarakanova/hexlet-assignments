@@ -11,13 +11,12 @@
 </head>
 <body>
 <header>
-    <a href="/">Main</a><space>
-        <a href="/users}">Users</a>
+    <a href="/">Home</a><space>
+        <a href="/users">Users</a>
 </header>
 <main>
     ${content}
 </main>
-
 <footer>
     <p>Pelmen Inc. 2023</p>
 </footer>
