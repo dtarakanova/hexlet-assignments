@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-    <a href="/">Home</a><space>
+    <a href="/">Home</a>
         <a href="/users">Users</a>
 </header>
 <main>
