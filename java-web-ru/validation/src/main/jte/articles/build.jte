@@ -1,5 +1,5 @@
 <!-- BEGIN -->
-@import org.example.hexlet.dto.users.BuildUserPage
+@import exercise.dto.articles.NewArticlePage
 @param NewArticlePage page
 
 @if(page.getErrors() != null)
@@ -12,7 +12,7 @@
     </ul>
 @endif
 
-<form action="/users" method="post">
+<form action="/articles" method="post">
     <div>
         <label>
             Название статьи

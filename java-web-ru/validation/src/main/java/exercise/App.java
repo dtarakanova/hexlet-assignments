@@ -30,29 +30,30 @@ public final class App {
 
         // BEGIN
         app.get("/articles/new", ctx -> {
-            ctx.render("articles/build.jte");
+            var page = new NewArticlePage();
+            ctx.render("articles/build.jte", Collections.singletonMap("page", page));
         });
 
         app.post("/articles", ctx -> {
-            try {        
+            try {
                 var title = ctx.formParamAsClass("title", String.class)
                         .check(value -> value.length() >= 2, "Название не должно быть короче двух символов")
                         .check(value -> !ArticleRepository.existsByTitle(value), "Статья с таким названием уже существует")
                         .get();
 
                 var content = ctx.formParamAsClass("content", String.class)
-                        .check (value -> value.length() >= 10, "Статья должна быть не короче 10 символов")
+                        .check(value -> value.length() >= 10, "Статья должна быть не короче 10 символов")
                         .get();
 
                 var article = new Article(title, content);
                 ArticleRepository.save(article);
                 ctx.redirect("/articles");
 
-            } catch (ValidationException e){
+            } catch (ValidationException e) {
                 var title = ctx.formParam("title");
                 var content = ctx.formParam("content");
                 var page = new NewArticlePage(title, content, e.getErrors());
-                ctx.status(422).render("/articles/new.jte", Collections.singletonMap("page", page));
+                ctx.status(422).render("/articles/build.jte", Collections.singletonMap("page", page));
                     }
                 });
         // END
