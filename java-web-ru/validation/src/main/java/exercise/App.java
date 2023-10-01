@@ -53,7 +53,7 @@ public final class App {
                 var title = ctx.formParam("title");
                 var content = ctx.formParam("content");
                 var page = new NewArticlePage(title, content, e.getErrors());
-                ctx.status(422).render("/articles/build.jte", Collections.singletonMap("page", page));
+                ctx.status(422).render("articles/build.jte", Collections.singletonMap("page", page));
                     }
                 });
         // END
