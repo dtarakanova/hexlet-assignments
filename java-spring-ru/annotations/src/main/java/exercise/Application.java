@@ -17,7 +17,7 @@ public class Application {
                     e.printStackTrace();
                 }
                 var methodName = method.getName();
-                var returnedType = method.getReturnType();
+                var returnedType = method.getReturnType().getSimpleName();
 
                 System.out.println("Method " + methodName + " returns a value of type " + returnedType);
             }
