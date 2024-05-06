@@ -38,6 +38,7 @@ public class PostsController {
         newPost.setSlug(post.getSlug());
         newPost.setTitle(post.getTitle());
         newPost.setBody(post.getBody());
+        posts.add(newPost);
         return newPost;
     }
 }
