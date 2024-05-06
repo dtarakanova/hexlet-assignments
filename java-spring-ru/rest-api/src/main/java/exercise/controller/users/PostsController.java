@@ -24,7 +24,7 @@ public class PostsController {
     @GetMapping("users/{id}/posts")
     public List<Post> postsByUser(@PathVariable String id) {
         var postsByUser = posts.stream()
-                .filter(x -> x.getUserId()==Integer.parseInt(id))
+                .filter(x -> x.getUserId() == Integer.parseInt(id))
                 .toList();
         return postsByUser;
     }
