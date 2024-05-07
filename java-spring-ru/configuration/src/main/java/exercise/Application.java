@@ -26,12 +26,11 @@ public class Application {
 
     @GetMapping("/admins")
     public List<String> admins() {
-        List<String> finList = adminUsers.getAdmins();
-        finList.stream()
+        return users.stream()
+                .filter(x -> adminUsers.getAdmins().contains(x.getEmail()))
+                .map(User::getName)
                 .sorted()
                 .toList();
-        return finList;
-
     }
     // END
 
