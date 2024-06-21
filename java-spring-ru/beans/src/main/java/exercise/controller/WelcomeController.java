@@ -1,19 +1,25 @@
 package exercise.controller;
-
+import exercise.daytime.Daytime;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 // BEGIN
 @RestController
 @RequestMapping("/welcome")
 
 public class WelcomeController {
-    @Autowired
     private final Daytime daytime;
+    @Autowired
+    public WelcomeController(Daytime daytime) {
+        this.daytime = daytime;
+    }
 
     @GetMapping(path = "")
     public String welcome() {
-        System.out.println("It is " + daytime + " now! Welcome to Spring!");
+        return "It is " + daytime + " now! Welcome to Spring!";
     }
 }
 // END

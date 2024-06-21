@@ -8,9 +8,12 @@ import java.time.LocalDateTime;
 import exercise.daytime.Daytime;
 import exercise.daytime.Day;
 import exercise.daytime.Night;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.Bean;
+
 
 // BEGIN
-
+import java.time.LocalTime;
 // END
 
 @SpringBootApplication
