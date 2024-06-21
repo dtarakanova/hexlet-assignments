@@ -19,7 +19,7 @@ public class WelcomeController {
 
     @GetMapping(path = "")
     public String welcome() {
-        return "It is " + daytime + " now! Welcome to Spring!";
+        return "It is " + daytime.getName() + " now! Welcome to Spring!";
     }
 }
 // END
