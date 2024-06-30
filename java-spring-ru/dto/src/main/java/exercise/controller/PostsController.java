@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.http.HttpStatus;
 import java.util.List;
 
 import exercise.model.Post;
@@ -32,8 +33,7 @@ public class PostsController {
     @ResponseStatus(HttpStatus.OK)
     public PostDTO showPost (@PathVariable Long id) {
         var post = postRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Post not found"));
-
+                .orElseThrow(() -> new ResourceNotFoundException("Post with id " + id + " not found"));
                 var dto = new PostDTO();
                 dto.setId(post.getId());
                 dto.setTitle(post.getTitle());
