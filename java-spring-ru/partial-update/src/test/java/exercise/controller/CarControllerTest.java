@@ -6,6 +6,7 @@ import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.instancio.Instancio;
 import org.instancio.Select;
+import java.nio.charset.StandardCharsets;
 
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,7 +82,7 @@ class CarControllerTest {
         var result = mockMvc.perform(request)
                 .andExpect(status().isOk())
                 .andReturn();
-        var body = result.getResponse().getContentAsString();
+        var body = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
 
         assertThatJson(body).and(
             v -> v.node("model").isEqualTo(testCar.getModel()),
